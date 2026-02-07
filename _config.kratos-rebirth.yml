@@ -9,14 +9,17 @@ search:
 
 # 图片配置
 image:
-  favicon: "/assets/favicon.png" # 站点图标
-  #avatar: "/assets/logo.webp" # 个人信息挂件上的头像
+  favicon: "/assets/favicon.ico" # 站点图标
+  avatar: "/assets/logo.webp" # 个人信息挂件上的头像
   banner:
-    light: "https://dev.krt.moe/demo-assets/banner.webp"
-    dark: "https://dev.krt.moe/demo-assets/banner_dark.webp"
+    light: "/assets/banner_light.webp"
+    dark: "/assets/banner_dark.webp"
   background:
-    light: "https://dev.krt.moe/demo-assets/bg.webp"
-    dark: "https://dev.krt.moe/demo-assets/bg.webp"
+    light: "/assets/background_light.webp"
+    dark: "/assets/background_dark.webp"
+  about:
+    light: "/assets/about_light.webp"
+    dark: "/assets/about_dark.webp"
 
 # 顶部导航栏配置
 nav:
@@ -106,34 +109,40 @@ copyright_notice:
 comments:
   core:
     enable_at:
-    # - index
+      - index
       - post
       - page
     template:
       _shared: ""
       index: ""
-      post: ""
-      page: ""
+      post: <div id="w-comments" class="kr-comments" data-path="$PATH"></div>
+      page: <div id="w-comments" class="kr-comments" data-path="$PATH"></div>
   count:
-    enable_at: []
-    # - index
-    # - post
+    enable_at:
+      - index
+      - post
     template:
-      _shared: ""
+      _shared: <span data-path="$PATH" class="waline-comment-count"> </span>
       index: ""
       post: ""
 
 # 访问数量统计
 visit_count:
-  enable_at: []
+  enable_at:
+    - index
+    - post
   template:
-    _shared: ""
+    _shared: <span data-path="$PATH" class="waline-pageview-count"> </span>
     index: ""
     post: ""
 
 ################## 额外的注入代码 ##################
 additional_injections:
-  head: "" # 搜索引擎验证，或是追加的样式表
+  head: |
+    <link href="https://cdn.jsdelivr.net/npm/@chinese-fonts/xiaolai@3.0.0/dist/Xiaolai/result.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
   footer: "" # 注入到页面主体的内容，例如额外的可见组件
-  after_footer: "" # 站点分析，或是追加的脚本
+  after_footer: |
+    <script defer type="module" src="/js/main.js"></script>
   tools: "" # 注入到页面右下角浮动工具栏里的功能按钮

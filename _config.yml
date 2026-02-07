@@ -3,17 +3,23 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: 柠檬冰
-language: en
+title: 冰の闲余记录
+subtitle: '起飞咯~'
+description: '
+auto auto() {
+    auto auto = auto&lt;auto&gt;();
+    auto("%auto", auto);
+    auto auto;
+}
+'
+keywords: [blog, program, computer science]
+author: 冰
+language: zh
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://lemonkoori.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
